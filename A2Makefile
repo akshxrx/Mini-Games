@@ -1,0 +1,14 @@
+CC = gcc
+CFLAGS  = -g -Wall
+
+A2: A2.o list.o
+	$(CC) $(CFLAGS) -o A2 A2.o list.o
+
+A2.o: A2.c list.h
+	$(CC) $(CFLAGS) -c A2.c
+
+list.o: list.c list.h
+	$(CC) $(CFLAGS) -c list.c
+
+clean: 
+	$(RM) *.o A2
